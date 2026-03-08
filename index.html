@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 100px;
+}
+#nickname {
+    font-size: 40px;
+    margin: 20px;
+}
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h2>닉네임</h2>
+<div id="nickname">???</div>
+<button onclick="generate()">생성</button>
+
+<script>
+function generate(){
+    let s="abcdefghijklmnopqrstuvwxyz";
+    let arr=[s[Math.random()*26|0],s[Math.random()*26|0],s[Math.random()*26|0],Math.random()*10|0];
+    arr.sort(()=>Math.random()-0.5);
+    document.getElementById("nickname").innerText=arr.join("");
+}
+</script>
+</body>
+</html>
